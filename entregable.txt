@@ -1,0 +1,35 @@
+1. ¿Por qué hay contenido en el body al abrir el archivo en el navegador, pero ese mismo contenido no aparece en el código fuente de VS Code?
+
+Porque el contenido es generado de forma dinámica en tiempo de ejecución mediante JavaScript (manipulando el DOM). Al abrir la página, el script
+se ejecuta y añade los elementos al HTML, pero el archivo estático original en VS Code no contiene esas etiquetas escritas directamente. 
+
+2. 
+¿createCard es una función recursiva?
+No, no es una función recursiva. Una función recursiva es aquella que se llama a sí misma dentro de su propio bloque de código para ejecutarse de 
+forma repetitiva; en este caso, createCard es simplemente una función manejadora que se pasa como referencia al evento del botón, sin llamarse a sí misma de manera interna.
+
+¿Qué representa el valor document en JavaScript?
+Representa todo el documento HTML cargado en el navegador (el DOM). Funciona como el punto de entrada principal para poder leer, seleccionar, modificar o crear elementos 
+dentro de la página web desde JavaScript.
+
+¿Qué hace la función createElement?
+Permite crear en la memoria un nuevo elemento HTML especificando el tipo de etiqueta que deseas (por ejemplo, un div, un button, etc.), el cual después puede ser insertado 
+en la página.
+
+¿Qué hace la función appendChild?
+Inserta un nodo o elemento hijo al final de la lista de hijos de un elemento padre especificado (por ejemplo, agregar una tarjeta recién creada dentro de un contenedor 
+principal).
+
+3. 
+¿Qué es la variable e?
+Es el objeto del evento (Event object). Contiene toda la información detallada sobre el evento que acaba de ocurrir (en este caso, el clic), como el elemento exacto que lo originó,
+las coordenadas del cursor, etc.
+
+¿Cómo es que el botón cambia de color y se deshabilita?
+Gracias a que e.target hace referencia directa al botón que recibió el clic. A través de él se modifica su propiedad .disabled = true para bloquearlo, y se manipulan sus clases CSS 
+con .classList.remove() y .classList.add() para cambiar su estilo visual, además de actualizar su texto con .innerText.
+
+Recarga el navegador. Responde en entregable.txt: ¿por qué aún no hay cambios visibles?
+Porque aunque los elementos (label e input) ya fueron creados en la memoria mediante document.createElement, todavía no han sido insertados o adjuntados al DOM (la estructura 
+visible de la página) utilizando appendChild.
+
